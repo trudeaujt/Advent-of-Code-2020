@@ -1,0 +1,15 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "advent of code",
+  "main": "index",
+  "type": "module",
+  "scripts": {
+    "test": "mocha day*/*.test.js",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "mocha": "^8.2.1"
+  }
+}

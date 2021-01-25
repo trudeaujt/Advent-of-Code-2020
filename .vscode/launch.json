@@ -2,7 +2,7 @@
     "configurations": [
     {
         "args": [
-            "${workspaceFolder}\\day07\\*.test.js"
+            "${workspaceFolder}\\day08\\*.test.js"
         ],
         "internalConsoleOptions": "openOnSessionStart",
         "name": "Mocha Tests",

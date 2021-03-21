@@ -19,28 +19,42 @@ const ops = {
 export const problem1 = (input) => {
     let accumulator = 0;
     let loopDetected = false;
-    let i = 0;
+    let index = 0;
 
     while(!loopDetected) {
-        let cur = input[i];
-
-        if(cur.visited === true) {
+        let cur = input[index];
+        if(cur === undefined) {
+            break;
+        } else if(cur.visited === true) {
             loopDetected = true;
         } else if(cur.op === ops.NOP) {
-            ++i;
+            ++index;
         } else if(cur.op === ops.ACC) {
             accumulator += cur.val * cur.sign;
-            ++i;
+            ++index;
         } else if(cur.op === ops.JMP) {
-            i += cur.val * cur.sign;
+            index += cur.val * cur.sign;
+        }
+        if(index >= input.length) {
+            break;
         }
         cur.visited = true;
     }
-    return accumulator;
+    return {accumulator, index};
 }
 
 export const problem2 = (input) => {
 
-
+    for (let i = 0; i < input.length; i++) {
+        if(input[i].sign !== ops.ACC) {
+            let modifiedInput = input.map(code => ({...code}));
+            let modifiedCode = modifiedInput[i];
+            modifiedCode.op = modifiedCode.op === ops.JMP ? ops.NOP : ops.JMP;
+            let result = problem1(modifiedInput)
+            if((result.index) >= input.length) {
+                return result.accumulator;
+            }
+        }
+    }
 
 }

@@ -10,13 +10,13 @@ const parsedUnknownInputPart2 = parseInput(unknownInput);
 
 describe('Day 8 - Part 1 - Known Input', () => {
     it('should find the value of the accumulator before looping for a known input', () => {
-        assert.strictEqual(problem1(parsedKnownInput).accumulator, 5);
+        assert.strictEqual(problem1(parsedKnownInput), 5);
     });
 });
 
 describe('Day 8 - Part 1 - Unknown Input', () => {
     it('should find the value of the accumulator before looping for an unknown input', () => {
-        assert.strictEqual(problem1(parsedUnknownInput).accumulator, 1137);
+        assert.strictEqual(problem1(parsedUnknownInput), 1137);
     });
 });
 
@@ -28,6 +28,6 @@ describe('Day 8 - Part 2 - Known Input', () => {
 
 describe('Day 8 - Part 2 - Unknown Input', () => {
     it('should find the value of the accumulator while fixing the code for an unknown input', () => {
-        assert.strictEqual(problem2(parsedUnknownInputPart2), 8);
+        assert.strictEqual(problem2(parsedUnknownInputPart2), 1125);
     });
 });

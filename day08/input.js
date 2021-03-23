@@ -1,15 +1,4 @@
-export const knownInput = 
-`nop +0
-acc +1
-jmp +4
-acc +3
-jmp -3
-acc -99
-acc +1
-jmp -4
-acc +6`
-
-export const unknownInput = 
+export const unknownInput =
 `acc +40
 jmp +187
 acc +47
@@ -606,3 +595,13 @@ acc +29
 nop -575
 acc -7
 jmp +1`
+
+export const knownInput = `nop +0
+acc +1
+jmp +4
+acc +3
+jmp -3
+acc -99
+acc +1
+jmp -4
+acc +6`

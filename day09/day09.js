@@ -1,5 +1,3 @@
-// @flow
-
 function removeElement(array, number) {
     const index = array.indexOf(number);
     if(index > -1) {
@@ -41,6 +39,8 @@ export const problem1 = (inputString, preamble) => {
         slice.push(nextValue);
         slice.sort((a, b) => a - b);
     }
+
+    throw new Error('No matching value found.');
 }
 
 export const problem2 = (input) => {

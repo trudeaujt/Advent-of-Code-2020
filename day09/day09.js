@@ -8,11 +8,15 @@ function removeElement(array, number) {
     }
 }
 
-export const problem1 = (inputString, preamble) => {
-    const input = inputString.split("\n")
+const parseInput = (string) => {
+     return string.split("\n")
         .map(elem => parseInt(elem));
+}
+
+export const problem1 = (inputString, preamble) => {
+    const input = parseInput(inputString);
     let slice = input.slice(0, preamble);
-    slice.sort();
+    slice.sort((a, b) => a - b);
     //Oldest element, used to move the sliding slice window
     let sliceTail = 0;
 
@@ -43,6 +47,19 @@ export const problem1 = (inputString, preamble) => {
     throw new Error('No matching value found.');
 }
 
-export const problem2 = (input) => {
+export const problem2 = (inputString, target) => {
+    const input = parseInput(inputString);
+    let tail = 0, head = 1, sum = 0;
+    while (sum !== target) {
+        let slice = input.slice(tail, head + 1);
+        sum = slice.reduce((acc, cur) => acc + cur, 0);
+        if(sum < target)
+            head++;
+        else if(sum > target)
+            tail++;
+        else if(sum === target)
+            return Math.min(...slice) + Math.max(...slice);
+    }
 
+    throw new Error('No matching value found.');
 }

@@ -7,6 +7,6 @@ describe('Day 10 - part 1', () => {
         assert.strictEqual(problem1(knownInput), 220);
     });
     it('should find the chain of adapters and multiply the number of 1 by 3 jolt jumps for an unknown input', function () {
-        assert.strictEqual(problem1(unknownInput), 220);
+        assert.strictEqual(problem1(unknownInput), 1700);
     });
 });

@@ -104,6 +104,7 @@ dist
 .tern-port
 
 # Deployment files
-.idea/deployment.xml
-.idea/sshConfigs.xml
-.idea/webServers.xml
+deployment.xml
+sshConfigs.xml
+webServers.xml
+workspace.xml
